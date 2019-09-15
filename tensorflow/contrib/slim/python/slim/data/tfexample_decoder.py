@@ -418,7 +418,8 @@ class Image(ItemHandler):
     def decode_image():
       """Decodes a image based on the headers."""
       return math_ops.cast(
-          image_ops.decode_image(image_buffer, channels=self._channels),
+          image_ops.decode_image(image_buffer, channels=self._channels,
+                                self._dtype),
           self._dtype)
 
     def decode_jpeg():
